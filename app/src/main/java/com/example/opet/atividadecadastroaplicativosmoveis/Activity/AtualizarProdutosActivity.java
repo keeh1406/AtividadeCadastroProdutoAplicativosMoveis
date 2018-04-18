@@ -14,7 +14,7 @@ import com.example.opet.atividadecadastroaplicativosmoveis.R;
 
 public class AtualizarProdutosActivity extends Activity {
     private int ID_PRODUTO;
-    private ProdutoDAO produtoDAO = new produtoDAO(this);
+    private ProdutoDAO produtoDAO;
     private Produto produto;
     private EditText editNomeProduto;
     private EditText editDescricaoProduto;
