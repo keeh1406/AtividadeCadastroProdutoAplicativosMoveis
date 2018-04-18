@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AtividadeCadastroAplicativosMoveis.iml" filepath="$PROJECT_DIR$/AtividadeCadastroAplicativosMoveis.iml" />
+      <module fileurl="file://C:\Users\opet\Desktop\AtividadeCadastroProdutoAplicativosMoveis\AtividadeCadastroAplicativosMoveis.iml" filepath="C:\Users\opet\Desktop\AtividadeCadastroProdutoAplicativosMoveis\AtividadeCadastroAplicativosMoveis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AtividadeCadastroProdutoAplicativosMoveis.iml" filepath="$PROJECT_DIR$/AtividadeCadastroProdutoAplicativosMoveis.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\opet\Desktop\AtividadeCadastroProdutoAplicativosMoveis\app\app.iml" filepath="C:\Users\opet\Desktop\AtividadeCadastroProdutoAplicativosMoveis\app\app.iml" />
     </modules>
   </component>
 </project>
