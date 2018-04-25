@@ -49,7 +49,7 @@ public class Produto {
     public Date getValidadeProduto() {
         return validadeProduto;
     }
-    public void setValidadeProduto(String validadeProdutooProdutoProduto) {
+    public void setValidadeProduto(Date validadeProduto) {
         this.validadeProduto = validadeProduto;
     }
 

@@ -22,9 +22,9 @@ public class DatabaseFactory extends SQLiteOpenHelper {
                 + BancoUtil.ID_PRODUTO+ " integer primary key autoincrement,"
                 + BancoUtil.NOME_PRODUTO + " text,"
                 + BancoUtil.DESCRICAO_PRODUTO + " text,"
-                + BancoUtil.VALIDADE_PRODUTO + " date,"
+                + BancoUtil.VALIDADE_PRODUTO + " text,"
                 + BancoUtil.SETOR_PRODUTO + " text,"
-                + BancoUtil.MARCA_PRODUTO + " text";
+                + BancoUtil.MARCA_PRODUTO + " text)";
         db.execSQL(sql);
 
     }

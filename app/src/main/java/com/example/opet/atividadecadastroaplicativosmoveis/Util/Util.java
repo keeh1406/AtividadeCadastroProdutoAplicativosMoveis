@@ -7,12 +7,20 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Diego on 08/11/2017.
  */
 
 public class Util {
+
+    public static Date toDate (String data) throws ParseException {
+        return new SimpleDateFormat ("dd/MM/yyyy").parse(data);
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String toMD5(String data){

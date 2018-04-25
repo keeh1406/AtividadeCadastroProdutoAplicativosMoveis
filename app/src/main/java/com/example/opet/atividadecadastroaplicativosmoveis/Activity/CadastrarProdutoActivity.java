@@ -11,6 +11,9 @@ import com.example.opet.atividadecadastroaplicativosmoveis.DAO.Produto;
 import com.example.opet.atividadecadastroaplicativosmoveis.DAO.ProdutoDAO;
 import com.example.opet.atividadecadastroaplicativosmoveis.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public class CadastrarProdutoActivity extends Activity {
     private EditText editNomeProduto;
     private EditText editDescricaoProduto;
@@ -30,12 +33,13 @@ public class CadastrarProdutoActivity extends Activity {
         editMarcaProduto = (EditText) findViewById(R.id.editMarcaProduto);
     }
 
-    public void salvarProduto(View v){
+    public void salvarProduto(View v) throws ParseException {
         ProdutoDAO produtoDAO = new ProdutoDAO(this);
         Produto produto = new Produto();
         produto.setNomeProduto(editNomeProduto.getText().toString());
         produto.setDescricaoProduto(editDescricaoProduto.getText().toString());
-        produto.setValidadeProduto(editValidadeProduto.getText().toString());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        produto.setValidadeProduto(simpleDateFormat.parse(editValidadeProduto.getText().toString()));
         produto.setSetorProduto(editSetorProduto.getText().toString());
         produto.setMarcaProduto(editMarcaProduto.getText().toString());
 

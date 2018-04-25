@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.example.opet.atividadecadastroaplicativosmoveis.Factory.DatabaseFactory;
 import com.example.opet.atividadecadastroaplicativosmoveis.Util.BancoUtil;
+import com.example.opet.atividadecadastroaplicativosmoveis.Util.Util;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +44,7 @@ public class ProdutoDAO {
 
     }
 
-    public Produto carregaProdutoPorID(long id){
+    public Produto carregaProdutoPorID(long id) throws ParseException {
         Cursor cursor;
         String[] campos = {BancoUtil.ID_PRODUTO, BancoUtil.NOME_PRODUTO, BancoUtil.DESCRICAO_PRODUTO, BancoUtil.VALIDADE_PRODUTO, BancoUtil.SETOR_PRODUTO, BancoUtil.MARCA_PRODUTO};
         db = banco.getReadableDatabase();
@@ -64,7 +67,7 @@ public class ProdutoDAO {
             produto.setID(ID);
             produto.setNomeProduto(nomeProduto);
             produto.setDescricaoProduto(descricaoProduto);
-            produto.setValidadeProduto(validadeProduto);
+            produto.setValidadeProduto(Util.toDate(validadeProduto));
             produto.setSetorProduto(setorProduto);
             produto.setMarcaProduto(marcaProduto);
 
@@ -108,13 +111,15 @@ public class ProdutoDAO {
                     produto.setID(ID);
                     produto.setNomeProduto(nomeProduto);
                     produto.setDescricaoProduto(descricaoProduto);
-                    produto.setValidadeProduto(validadeProduto);
+                    produto.setValidadeProduto(Util.toDate(validadeProduto));
                     produto.setSetorProduto(setorProduto);
                     produto.setMarcaProduto(marcaProduto);
 
                     produtos.add(produto);
                 } while (cursor.moveToNext());
             }
+        } catch (ParseException e) {
+            e.printStackTrace();
         } finally {
             cursor.close();
         }
