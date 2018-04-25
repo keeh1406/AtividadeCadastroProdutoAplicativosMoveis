@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.opet.atividadecadastroaplicativosmoveis.DAO.Produto;
 import com.example.opet.atividadecadastroaplicativosmoveis.DAO.ProdutoDAO;
 import com.example.opet.atividadecadastroaplicativosmoveis.R;
+import com.example.opet.atividadecadastroaplicativosmoveis.Util.Util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,7 +30,7 @@ public class AtualizarProdutosActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atualizar_produtos);
-
+        produtoDAO = new ProdutoDAO(this);
         Intent intent = getIntent();
         if(intent.hasExtra("ID_PRODUTO")){
             ID_PRODUTO = intent.getIntExtra("ID_PRODUTO",0);
@@ -48,7 +49,7 @@ public class AtualizarProdutosActivity extends Activity {
 
         editNomeProduto.setText(produto.getNomeProduto());
         editDescricaoProduto.setText(produto.getDescricaoProduto());
-        editValidadeProduto.setText((CharSequence) produto.getValidadeProduto());
+        editValidadeProduto.setText(Util.toString(produto.getValidadeProduto()));
         editSetorProduto.setText(produto.getSetorProduto());
         editMarcaProduto.setText(produto.getMarcaProduto());
     }

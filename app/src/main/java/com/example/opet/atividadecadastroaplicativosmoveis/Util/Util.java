@@ -21,6 +21,9 @@ public class Util {
         return new SimpleDateFormat ("dd/MM/yyyy").parse(data);
     }
 
+    public static String toString (Date data) {
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static String toMD5(String data){
